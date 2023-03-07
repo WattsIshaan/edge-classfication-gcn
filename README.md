@@ -54,5 +54,5 @@ To handle this data imbalance I have punished misclassifcation more for the mino
 weight1 = 1/(total samples * freq1)<br>
 weight0 = 1/(total samples * freq0)
 </div>
-
+<br>
 I have also used the Area under Precision-Recall (AUCPR) curve rather than Area under ROC curve since if the dataset is highly imbalanced then FPR would be close to 0 as TN would be very high. 
