@@ -6,7 +6,9 @@ Task is to train an Edge Classifier Graph Neural Network to classify the edges (
 
 ## Dataset
 
-The dataset used can be found on this [link](https://cernbox.cern.ch/s/YQxujEYrVFFpylN]). The dataset is split up in 10 gzip compressed tarballs. Download and extract the dataset and run the .ipynb files in the directory containing the data folders.
+The dataset used can be found on this [link](https://cernbox.cern.ch/s/YQxujEYrVFFpylN]). The dataset is split up in 10 gzip compressed tarballs. Download and extract the dataset and run the .ipynb files in the directory containing the data folders. <br>
+
+The dataset contains 9996 graphs.
 
 ## requirements.txt
 
@@ -42,3 +44,15 @@ It contains the code with step by step description of the whole project.
 2. GNN-Tracking-Module.ipynb and cern.py <br>
 ```cern.py``` contains all the functions and classes used in the project which makes the code reusable. ```GNN-Tracking-Module.ipynb``` is the same implementation of the project built by importing the classes and methods from the ```.py file```.
 
+## Data Imbalance
+
+The dataset has two edge labels namely 1 and 0. The ratio of edges with label1 to label0 is approximately 1:4. <br>
+
+To handle this data imbalance I have punished misclassifcation more for the minority class (here label1) by giving it more weightage in the loss function used. The weights are calculated as follows:
+
+<div align="center">
+weight1 = 1/(total samples * freq1)<br>
+weight0 = 1/(total samples * freq0)
+</div>
+
+I have also used the Area under Precision-Recall (AUCPR) curve rather than Area under ROC curve since if the dataset is highly imbalanced then FPR would be close to 0 as TN would be very high. 
