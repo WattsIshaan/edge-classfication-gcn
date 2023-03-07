@@ -6,7 +6,7 @@ Task is to train an Edge Classifier Graph Neural Network to classify the edges (
 
 ## Dataset
 
-The dataset used can be found on this link[href=https://cernbox.cern.ch/s/YQxujEYrVFFpylN]. The dataset is split up in 10 gzip compressed tarballs. Download and extract the dataset and run the .ipynb files in the directory containing the data folders.
+The dataset used can be found on this [link](https://cernbox.cern.ch/s/YQxujEYrVFFpylN]). The dataset is split up in 10 gzip compressed tarballs. Download and extract the dataset and run the .ipynb files in the directory containing the data folders.
 
 ## requirements.txt
 
